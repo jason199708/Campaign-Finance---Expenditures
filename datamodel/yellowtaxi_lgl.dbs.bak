@@ -69,7 +69,7 @@
 			<column name="dropoffLocation_id" type="INT" jt="4" mandatory="y" />
 			<column name="dropoffdate_id" type="INT" jt="4" mandatory="y" />
 			<column name="passenger_count" type="INT" jt="4" />
-			<column name="triptype_id" prior="tripType_id" type="INT" jt="4" />
+			<column name="tripType_id" type="INT" jt="4" />
 			<column name="paymenttype_id" type="INT" jt="4" />
 			<column name="ratecode_id" type="INT" jt="4" />
 			<column name="fare_amount" type="DECIMAL" length="5" decimal="2" jt="3" />
@@ -88,7 +88,7 @@
 				<column name="ratecode_id" />
 			</index>
 			<index name="unq_tripType_id" unique="UNIQUE_INDEX" >
-				<column name="triptype_id" />
+				<column name="tripType_id" />
 			</index>
 			<fk name="fk_facts_trip_dim_vendor" virtual="y" to_schema="yellowtaxi_lgl.INSTANCE" to_table="dim_vendor" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
 				<fk_column name="vendor_id" pk="vendor_id" />
@@ -103,7 +103,7 @@
 				<fk_column name="ratecode_id" pk="ratecode_id" />
 			</fk>
 			<fk name="fk_facts_trip_dim_triptype" virtual="y" to_schema="yellowtaxi_lgl.INSTANCE" to_table="dim_triptype" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
-				<fk_column name="triptype_id" pk="triptype_id" />
+				<fk_column name="tripType_id" pk="triptype_id" />
 			</fk>
 			<fk name="fk_facts_trip_dim__paymenttype" virtual="y" to_schema="yellowtaxi_lgl.INSTANCE" to_table="dim__paymenttype" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
 				<fk_column name="paymenttype_id" pk="paymenttype_id" />
